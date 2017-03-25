@@ -1,6 +1,6 @@
 ActiveAdmin.register Saints do
 
-	permit_params :name, :email, :phone, :hall, :profile_picture_url, :gender, :status, :grade, :batch
+	permit_params :name, :email, :phone, :hall, :profile_picture_url, :gender
 
 	index do
 	    selectable_column
@@ -9,7 +9,6 @@ ActiveAdmin.register Saints do
 	    column :email
 	    column :phone
 	    column :hall
-	    column :created_at
 	    actions
 	end	
 

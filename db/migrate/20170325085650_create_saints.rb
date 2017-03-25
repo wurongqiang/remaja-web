@@ -5,6 +5,8 @@ class CreateSaints < ActiveRecord::Migration[5.0]
       t.string :email
       t.string :phone
       t.string :hall
+      t.string :gender
+      t.string :profile_picture_url
 
       t.timestamps
     end
