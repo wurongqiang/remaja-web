@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325085650) do
+ActiveRecord::Schema.define(version: 20170325105004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,20 @@ ActiveRecord::Schema.define(version: 20170325085650) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "attendances", force: :cascade do |t|
+    t.integer "saint_id"
+    t.integer "session_id"
+    t.index ["saint_id"], name: "index_attendances_on_saint_id", using: :btree
+    t.index ["session_id"], name: "index_attendances_on_session_id", using: :btree
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string   "name"
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "saints", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -53,6 +67,14 @@ ActiveRecord::Schema.define(version: 20170325085650) do
     t.string   "hall"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.integer  "meeting_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meeting_id"], name: "index_sessions_on_meeting_id", using: :btree
   end
 
 end
