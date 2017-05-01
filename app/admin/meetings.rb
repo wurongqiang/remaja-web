@@ -1,5 +1,6 @@
-ActiveAdmin.register Meetings do
-
+ActiveAdmin.register Meeting do
+	
+	menu :priority => 4
 	permit_params :name, :date
 
 	index do
@@ -8,5 +9,5 @@ ActiveAdmin.register Meetings do
 	    column :name
 	    column :date
 	    actions
-	end	
+	end		
 end

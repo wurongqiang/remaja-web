@@ -1,5 +1,7 @@
-ActiveAdmin.register Sessions do
-	permit_params :name
+ActiveAdmin.register Session do
+	
+	menu :priority => 5
+	permit_params :name, :meeting_id
 
 	index do
 	    selectable_column
@@ -7,5 +9,4 @@ ActiveAdmin.register Sessions do
 	    column :name
 	    actions
 	end	
-
 end
