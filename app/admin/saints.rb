@@ -1,7 +1,7 @@
 ActiveAdmin.register Saint do
 	
 	menu :priority => 3
-	permit_params :name, :email, :phone, :hall, :profile_picture_url, :gender
+	permit_params :name, :email, :phone, :hall, :gender
 
 	index do
 	    selectable_column
