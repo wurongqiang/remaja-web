@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       post 'login', to: 'sessions#login'
       post 'logout', to: 'sessions#logout'
 
+      post 'change-password', to: 'users#change_password'
+
       resources 'attendances', only: [:create]
     end
   end

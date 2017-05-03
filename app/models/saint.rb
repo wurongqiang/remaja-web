@@ -4,6 +4,10 @@ class Saint < ActiveRecord::Base
 	  attr_accessor :password
 	  before_save :prepare_password
 
+	  validates_presence_of :email
+	  validates_uniqueness_of :email
+	  validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
+
 	  # login use email address
 	  def self.authenticate(login, pass)
 	    user = find_by_email(login)
@@ -17,6 +21,8 @@ class Saint < ActiveRecord::Base
 	  private
 
 	  def prepare_password
+	  	password = @password
+	  	
 	    if password.blank?
 	    	password = "123456"
 	    end

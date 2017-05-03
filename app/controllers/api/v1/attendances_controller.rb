@@ -16,7 +16,7 @@ module Api
 	          	response_message = { message: t('api_v1.client_error.422_input_attendance_failed_because_already_attend.message') }
 	          	response_status = :unprocessable_entity
             else
-		      	Attendance.create(saint_id: @current_user.id, session_id: params[:session_id])
+		      	Attendance.create(saint_id: current_user.id, session_id: params[:session_id])
 	      	end
 
 	    	render json: response_message, status: response_status
@@ -29,7 +29,7 @@ module Api
 	      end
 
 	      def alreadyAttend 
-	      	Attendance.find_by(session_id: params[:session_id], saint_id: @current_user.id)
+	      	Attendance.find_by(session_id: params[:session_id], saint_id: current_user.id)
 	      end
 	  end
 	end
