@@ -3,6 +3,10 @@ en:
     client_error:
       422_login_failed:
         message: 'Please enter correct email and password'
+      422_input_attendance_failed_because_session_doesnt_exist:
+        message: 'Input attendance failed, because the session doesn''t exist'
+      422_input_attendance_failed_because_already_attend:
+        message: 'Your attendance is already inputted before'
       401_unauthorized:
         message: 'Unauthorized'
       403_forbidden:
