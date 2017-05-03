@@ -4,9 +4,9 @@ class Saint < ActiveRecord::Base
 	  attr_accessor :password
 	  before_save :prepare_password
 
-	  # login can be either username or email address
+	  # login use email address
 	  def self.authenticate(login, pass)
-	    user = find_by_username(login) || find_by_email(login)
+	    user = find_by_email(login)
 	    return user if user && user.matching_password?(pass)
 	  end
 

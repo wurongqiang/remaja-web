@@ -1,0 +1,11 @@
+en:
+  api_v1:
+    client_error:
+      422_login_failed:
+        message: 'Please enter correct email and password'
+      401_unauthorized:
+        message: 'Unauthorized'
+      403_forbidden:
+        message: 'Forbidden'
+    logout:
+      message: 'Logout Successful'

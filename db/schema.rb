@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501080044) do
+ActiveRecord::Schema.define(version: 20170503135411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 20170501080044) do
     t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "saint_tokens", force: :cascade do |t|
+    t.string   "token",      null: false
+    t.integer  "saint_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["saint_id"], name: "index_saint_tokens_on_saint_id", using: :btree
   end
 
   create_table "saints", force: :cascade do |t|
