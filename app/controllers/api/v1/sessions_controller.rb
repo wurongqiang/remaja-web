@@ -22,15 +22,12 @@ module Api
 	        end
 	      end
 
-	      # def logout
-	      #   user_token = UserToken.find_by(token: request.headers['User-Access-Token'])
-	      #   user_token.destroy if user_token.present?
+	      def logout
+	        saint_token = SaintToken.find_by(token: request.headers['Saint-Access-Token'])
+	        saint_token.destroy if saint_token.present?
 	        
-	      #   user_firebase_tokens = UserFirebaseToken.where(device_id: params[:device_id])
-	      #   user_firebase_tokens.destroy_all if user_firebase_tokens.present?
-
-	      #   render json: '', status: :ok
-	      # end
+	        render json: '', status: :ok
+	      end
 	  end
 	end
 end
