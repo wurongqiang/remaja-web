@@ -5,6 +5,10 @@ module Api
 	      before_action :authenticate_user
 	      before_action :authenticate_client
 
+	      def index
+	      	@attendances = Attendance.where(saint_id: current_user.id)
+	      end
+
 	      def create
 	      	response_message = ''
 	      	response_status = :ok

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
       post 'change-password', to: 'users#change_password'
 
-      resources 'attendances', only: [:create]
+      resources 'attendances', only: [:create, :index]
     end
   end
 end
