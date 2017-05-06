@@ -11,5 +11,8 @@ en:
         message: 'Unauthorized'
       403_forbidden:
         message: 'Forbidden'
+    client_success:
+      add_attendance_success:
+        message: 'Your attendance has been successfully saved'
     logout:
       message: 'Logout Successful'

@@ -10,7 +10,7 @@ module Api
 	      end
 
 	      def create
-	      	response_message = { message: '' }
+	      	response_message = { message: t('api_v1.client_success.add_attendance_success.message') }
 	      	response_status = :ok
 
 	      	if sessionDoesntExist
