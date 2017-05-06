@@ -10,7 +10,7 @@ module Api
 	      end
 
 	      def create
-	      	response_message = ''
+	      	response_message = { message: '' }
 	      	response_status = :ok
 
 	      	if sessionDoesntExist
