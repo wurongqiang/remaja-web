@@ -27,6 +27,10 @@ class Saint < ActiveRecord::Base
 	    	password = "123456"
 	    end
 
+	    if password == 'no-update'
+	    	return
+	    end
+
 	    self.password_salt = Digest::SHA1.hexdigest([Time.now, rand].join)
 	    self.password_hash = encrypt_password(password)
 	  end

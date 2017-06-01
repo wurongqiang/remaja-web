@@ -12,7 +12,7 @@ module Api
 	      end
 
 	      def edit_profile
-	      	current_user.update(name: params[:name], phone: params[:phone], hall: params[:hall])
+	      	current_user.update(name: params[:name], phone: params[:phone], hall: params[:hall], password: 'no-update')
 
 	        render json: '', status: :ok
 	      end
