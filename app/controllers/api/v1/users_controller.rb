@@ -10,6 +10,12 @@ module Api
 
 	        render json: '', status: :ok
 	      end
+
+	      def edit_profile
+	      	current_user.update(name: params[:name], phone: params[:phone], hall: params[:hall])
+
+	        render json: '', status: :ok
+	      end
 		end
 	end
 end

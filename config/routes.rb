@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post 'logout', to: 'sessions#logout'
 
       post 'change-password', to: 'users#change_password'
+      post 'edit-profile', to: 'users#edit_profile'
 
       resources 'attendances', only: [:create, :index]
     end
